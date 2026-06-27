@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #F8F5F1;
+  --color-bg-secondary: #EEE6DD;
+  --color-text: #1C1C1C;
+  --color-text-sub: #6D6A66;
+  --color-accent: #C8A96A;
+  --color-accent-hover: #B78A47;
+  --color-border: #E8E2DA;
+  --color-card: #FFFFFF;
+}
