@@ -16,38 +16,42 @@ export function CursorEffect() {
   const [isHovering, setIsHovering] = React.useState(false);
 
   React.useEffect(() => {
-    if (!isDesktop) return;
+    if (typeof window === 'undefined' || !isDesktop) return;
 
-    const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
+    try {
+      const moveCursor = (e: MouseEvent) => {
+        cursorX.set(e.clientX);
+        cursorY.set(e.clientY);
+      };
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON' ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.classList.contains('interactive')
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
-    };
+      const handleMouseOver = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (
+          target.tagName === 'A' ||
+          target.tagName === 'BUTTON' ||
+          target.closest('a') ||
+          target.closest('button') ||
+          target.classList.contains('interactive')
+        ) {
+          setIsHovering(true);
+        } else {
+          setIsHovering(false);
+        }
+      };
 
-    window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('mouseover', handleMouseOver);
+      window.addEventListener('mousemove', moveCursor);
+      window.addEventListener('mouseover', handleMouseOver);
 
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener('mouseover', handleMouseOver);
-    };
+      return () => {
+        window.removeEventListener('mousemove', moveCursor);
+        window.removeEventListener('mouseover', handleMouseOver);
+      };
+    } catch (e) {
+      console.error('CursorEffect error', e);
+    }
   }, [isDesktop, cursorX, cursorY]);
 
-  if (!isDesktop) return null;
+  if (typeof window === 'undefined' || !isDesktop) return null;
 
   return (
     <>

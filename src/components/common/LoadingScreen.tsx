@@ -7,6 +7,8 @@ export function LoadingScreen() {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const hasVisited = sessionStorage.getItem('realspace-visited');
     if (hasVisited) {
       setTimeout(() => setIsLoading(false), 0);
@@ -28,13 +30,13 @@ export function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-bg)]"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--color-bg)] pointer-events-none"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="flex flex-col items-center gap-4"
+            className="flex flex-col items-center gap-4 pointer-events-auto"
           >
             <h1 className="font-playfair text-4xl tracking-widest text-[var(--color-text)]">
               REALSPACE
