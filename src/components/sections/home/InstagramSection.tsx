@@ -63,9 +63,12 @@ export function InstagramSection() {
         </motion.div>
 
         <div className="flex justify-center">
-          <Button variant="outline" size="lg" icon={<Instagram className="h-4 w-4" />} as="a" href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer">
-            Follow on Instagram
-          </Button>
+          <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="inline-block">
+            <Button variant="outline" size="lg" className="gap-2">
+              <Instagram className="h-4 w-4" />
+              Follow on Instagram
+            </Button>
+          </a>
         </div>
       </div>
     </section>

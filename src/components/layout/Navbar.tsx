@@ -91,7 +91,7 @@ export function Navbar() {
               {CONTACT.PHONE_DISPLAY}
             </a>
             <Link href="/contact" passHref legacyBehavior>
-              <Button variant={isScrolled ? "primary" : "accent"} size="sm" magnetic as="a">
+              <Button variant={isScrolled ? "default" : "accent"} size="sm">
                  Book Consultation
               </Button>
             </Link>
@@ -148,7 +148,7 @@ export function Navbar() {
                  className="pt-8"
               >
               <Link href="/contact" passHref legacyBehavior>
-                <Button variant="accent" size="lg" as="a">
+                <Button variant="accent" size="lg">
                    Book Consultation
                 </Button>
               </Link>

@@ -26,7 +26,7 @@ export default function ServicesPage() {
         ]}
       />
       <ServicesGridSection />
-      <ServicesCTASection />
+      <ServicesCTASection title="Ready to Start Your Project?" subtitle="Let's build something beautiful together." />
     </>
   );
 }

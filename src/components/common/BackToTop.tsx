@@ -38,7 +38,7 @@ export function BackToTop() {
           className="fixed bottom-6 right-6 z-40 md:bottom-8 md:right-8"
         >
           <Button
-            variant="primary"
+            variant="default"
             size="icon"
             onClick={scrollToTop}
             className="rounded-full shadow-lg"

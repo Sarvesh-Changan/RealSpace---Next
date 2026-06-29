@@ -48,12 +48,12 @@ export function HeroSection() {
 
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center gap-4">
             <Link href="/contact" passHref legacyBehavior>
-              <Button variant="accent" size="lg" as="a">
+              <Button variant="accent" size="lg">
                 Book Free Consultation
               </Button>
             </Link>
             <Link href="/projects" passHref legacyBehavior>
-              <Button variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10" as="a">
+              <Button variant="outline" size="lg" className="text-white border-white/30 hover:bg-white/10">
                 View Our Work
               </Button>
             </Link>

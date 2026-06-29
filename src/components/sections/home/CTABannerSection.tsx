@@ -29,7 +29,7 @@ export function CTABannerSection() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/contact" passHref legacyBehavior>
-              <Button variant="accent" size="lg" magnetic className="px-10" as="a">
+              <Button variant="accent" size="lg" className="px-10">
                 Book Free Consultation
               </Button>
             </Link>

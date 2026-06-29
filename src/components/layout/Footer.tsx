@@ -84,7 +84,7 @@ export function Footer() {
               </li>
               <li className="flex items-start text-gray-400 text-sm">
                 <MapPin className="h-5 w-5 mr-3 text-[var(--color-accent)] flex-shrink-0" />
-                <span>{CONTACT.ADDRESS}</span>
+                <span>{CONTACT.ADDRESS.STREET}, {CONTACT.ADDRESS.LOCALITY}</span>
               </li>
             </ul>
           </div>

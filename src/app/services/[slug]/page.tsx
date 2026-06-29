@@ -101,6 +101,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       />
       <PageHero
         title={service.title}
+        subtitle={service.shortDescription}
         image={service.heroImage}
         breadcrumbs={[
           { label: 'Home', href: '/' },

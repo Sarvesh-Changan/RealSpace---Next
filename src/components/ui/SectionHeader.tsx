@@ -1,51 +1,14 @@
-'use client';
+import React from 'react'
+import { motion } from 'motion/react'
+import { fadeUp } from '@/lib/animations'
+import { cn } from '@/lib/utils'
 
-import * as React from 'react';
-import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
-import { fadeUp } from '@/lib/animations';
-
-export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
-  eyebrow?: string;
-  title: string;
-  subtitle?: string;
-  align?: 'left' | 'center';
-}
-
-export function SectionHeader({
-  eyebrow,
-  title,
-  subtitle,
-  align = 'center',
-  className,
-  ...props
-}: SectionHeaderProps) {
+export function SectionHeader({ title, subtitle, eyebrow, align = 'center', className }: { title: string, subtitle?: string, eyebrow?: string, align?: 'left' | 'center' | 'right', className?: string }) {
   return (
-    <motion.div
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      className={cn(
-        'flex flex-col gap-3',
-        align === 'center' ? 'items-center text-center' : 'items-start text-left',
-        className
-      )}
-      {...(props as any)}
-    >
-      {eyebrow && (
-        <span className="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--color-text)]">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="max-w-2xl text-base md:text-lg text-[var(--color-text-sub)]">
-          {subtitle}
-        </p>
-      )}
+    <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className={cn(`text-${align}`, className)}>
+      {eyebrow && <span className="text-[var(--color-accent)] font-semibold tracking-wider uppercase text-sm mb-2 block">{eyebrow}</span>}
+      <h2 className="text-3xl md:text-4xl font-playfair font-bold text-[var(--color-text)] mb-4">{title}</h2>
+      {subtitle && <p className="text-[var(--color-text-sub)] text-lg max-w-2xl mx-auto">{subtitle}</p>}
     </motion.div>
-  );
+  )
 }
