@@ -1,17 +1,15 @@
 import { generateMetadata } from '@/lib/seo';
-import dynamic from 'next/dynamic';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
-
-const HeroSection = dynamic(() => import('@/components/sections/home/HeroSection').then(m => m.HeroSection), { ssr: false, loading: () => <div className="h-screen bg-[var(--color-bg)]" /> });
-const ImageSequenceSection = dynamic(() => import('@/components/sections/home/ImageSequenceSection').then(m => m.ImageSequenceSection), { ssr: false });
-const StatsSection = dynamic(() => import('@/components/sections/home/StatsSection').then(m => m.StatsSection), { ssr: false });
-const ServicesPreviewSection = dynamic(() => import('@/components/sections/home/ServicesPreviewSection').then(m => m.ServicesPreviewSection), { ssr: false });
-const FeaturedProjectsSection = dynamic(() => import('@/components/sections/home/FeaturedProjectsSection').then(m => m.FeaturedProjectsSection), { ssr: false });
-const ProcessSection = dynamic(() => import('@/components/sections/home/ProcessSection').then(m => m.ProcessSection), { ssr: false });
-const TestimonialsSection = dynamic(() => import('@/components/sections/home/TestimonialsSection').then(m => m.TestimonialsSection), { ssr: false });
-const FAQSection = dynamic(() => import('@/components/sections/home/FAQSection').then(m => m.FAQSection), { ssr: false });
-const InstagramSection = dynamic(() => import('@/components/sections/home/InstagramSection').then(m => m.InstagramSection), { ssr: false });
-const CTABannerSection = dynamic(() => import('@/components/sections/home/CTABannerSection').then(m => m.CTABannerSection), { ssr: false });
+import { HeroSection } from '@/components/sections/home/HeroSection';
+import { ImageSequenceSection } from '@/components/sections/home/ImageSequenceSection';
+import { StatsSection } from '@/components/sections/home/StatsSection';
+import { ServicesPreviewSection } from '@/components/sections/home/ServicesPreviewSection';
+import { FeaturedProjectsSection } from '@/components/sections/home/FeaturedProjectsSection';
+import { ProcessSection } from '@/components/sections/home/ProcessSection';
+import { TestimonialsSection } from '@/components/sections/home/TestimonialsSection';
+import { FAQSection } from '@/components/sections/home/FAQSection';
+import { InstagramSection } from '@/components/sections/home/InstagramSection';
+import { CTABannerSection } from '@/components/sections/home/CTABannerSection';
 
 export const metadata = generateMetadata({
   title: 'Luxury Interior Design in Thane & Mumbai',

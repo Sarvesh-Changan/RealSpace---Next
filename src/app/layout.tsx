@@ -1,10 +1,14 @@
 import { Playfair_Display, Inter } from 'next/font/google';
 import Script from 'next/script';
-import dynamic from 'next/dynamic';
 import { generateMetadata } from '@/lib/seo';
 import { getLocalBusinessSchema } from '@/lib/schema';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { LoadingScreen } from '@/components/common/LoadingScreen';
+import { CursorEffect } from '@/components/common/CursorEffect';
+import { ScrollProgress } from '@/components/common/ScrollProgress';
+import { WhatsAppButton } from '@/components/common/WhatsAppButton';
+import { BackToTop } from '@/components/common/BackToTop';
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -16,12 +20,6 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
-
-const LoadingScreen = dynamic(() => import('@/components/common/LoadingScreen').then(mod => mod.LoadingScreen), { ssr: false });
-const CursorEffect = dynamic(() => import('@/components/common/CursorEffect').then(mod => mod.CursorEffect), { ssr: false });
-const ScrollProgress = dynamic(() => import('@/components/common/ScrollProgress').then(mod => mod.ScrollProgress), { ssr: false });
-const WhatsAppButton = dynamic(() => import('@/components/common/WhatsAppButton').then(mod => mod.WhatsAppButton), { ssr: false });
-const BackToTop = dynamic(() => import('@/components/common/BackToTop').then(mod => mod.BackToTop), { ssr: false });
 
 export const metadata = generateMetadata({
   title: 'Home',
