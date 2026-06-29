@@ -21,7 +21,7 @@ export function CTABannerSection() {
           viewport={{ once: true }}
         >
           <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Ready to Transform Your Space?
+            Ready to Transform <span className="text-[var(--color-accent)]">Your Space?</span>
           </h2>
           <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             Book a free 30-minute consultation. No commitments, just ideas tailored to your unique requirements.
